@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" class="page">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sit Down Please</title>
-</head>
+@include('partials/head.html')
 
-<body>
-
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/hero.html')
+      @include('partials/special-offers.html')
+      @include('partials/high-rated.html')
+      @include('partials/oxford.html')
+      @include('partials/categories.html')
+      @include('partials/useful.html')
+      @include('partials/feedback.html')
+    </main>
+    @include('partials/footer.html')
+  </div>
 </body>
 
 </html>
