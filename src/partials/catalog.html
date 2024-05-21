@@ -1,0 +1,90 @@
+<section class="catalog">
+  <div class="catalog__container container">
+    <ul class="catalog__breadcrumbs breadcrumbs list-reset">
+      <li class="breadcrumbs__item">Главная</li>
+      <li class="breadcrumbs__item">Каталог</li>
+      <li class="breadcrumbs__item">Диваны</li>
+      <li class="breadcrumbs__item breadcrumbs__item--active">Прямые диваны</li>
+    </ul>
+    <div class="catalog__wrap">
+      <div class="catalog__side-bar">
+        <div class="catalog__filter filter">
+          <form class="filter__form">
+            <h3 class="filter__heading">Фильтровать по:</h3>
+            <ul class="filter__list list-reset">
+              <li class="filter__item filter__item--color">
+                <h4 class="filter__subtitle">Цвет</h4>
+                <div class="filter__form-group">
+                  <input type="checkbox" class="filter__input" id="brown">
+                  <label class="filter__label" for="brown">Коричневый</label>
+                </div>
+                <div class="filter__form-group">
+                  <input type="checkbox" class="filter__input" id="black">
+                  <label class="filter__label" for="black">Черный</label>
+                </div>
+                <div class="filter__form-group">
+                  <input type="checkbox" class="filter__input" id="blue">
+                  <label class="filter__label" for="blue">Синий</label>
+                </div>
+                <div class="filter__form-group">
+                  <input type="checkbox" class="filter__input" id="white">
+                  <label class="filter__label" for="white">Белый</label>
+                </div>
+              </li>
+              <li class="filter__item filter__item--category">
+                <h4 class="filter__subtitle">Категория</h4>
+                <div class="filter__form-group">
+                  <input type="checkbox" class="filter__input" id="couches">
+                  <label class="filter__label" for="couches">Диваны</label>
+                </div>
+                <div class="filter__form-group">
+                  <input type="checkbox" class="filter__input" id="chairs">
+                  <label class="filter__label" for="chairs">Кресла</label>
+                </div>
+              </li>
+              <li class="filter__item filter__item--price">
+                <h4 class="filter__subtitle">Цена</h4>
+                <div class="filter__price-input-wrap">
+                  <div class="filter__form-group">
+                    <label class="filter__label">от</label>
+                    <input class="filter__input" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="2000">
+                  </div>
+                  <div class="filter__form-group">
+                    <label class="filter__label">до</label>
+                    <input class="filter__input" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="150 000">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
+        <div class="catalog__special-card special-card">
+          <picture class="special-card__picture">
+            <source srcset="assets/img/special-card-item.webp 1x, assets/img/special-card-item-2x.webp 2x"
+              type="image/webp">
+            <img
+              class="special-card__img"
+              loading="lazy"
+              src="assets/img/special-card-item.jpg"
+              srcset="assets/img/special-card-item.jpg 1x, assets/img/special-card-item-2x.jpg 2x"
+              width="296"
+              height="190"
+              alt="Оксфорд">
+          </picture>
+          <div class="special-card__content">
+            <h3 class="special-card__heading">
+              <span class="special-card__highlighted">Оксфорд 1950 </span>Новая коллекция изысканных кресел
+            </h3>
+            <a class="special-card__link btn btn-reset">
+              В каталог
+              <svg class="">
+                <use xlink:href="assets/img/sprite.svg#arrow"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      @include('./product-catalog.html')
+    </div>
+  </div>
+</section>

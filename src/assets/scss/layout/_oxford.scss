@@ -1,0 +1,112 @@
+.oxford {
+  &__wrap {
+    background-image: url('../assets/img/oxford-bg.jpg');
+    background-image: image-set(
+      url('../assets/img/oxford-bg.webp') type('image/webp'),
+      url('../assets/img/oxford-bg.jpg') type('image/jpeg')
+    );
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      background-image: url('../assets/img/oxford-bg-1024.jpg');
+      background-image: image-set(
+        url('../assets/img/oxford-bg-1024.webp') type('image/webp'),
+        url('../assets/img/oxford-bg-1024.jpg') type('image/jpeg')
+      );
+    }
+
+    @include small-tablet {
+      background-image: url('../assets/img/oxford-bg-768.jpg');
+      background-image: image-set(
+        url('../assets/img/oxford-bg-768.webp') type('image/webp'),
+        url('../assets/img/oxford-bg-768.jpg') type('image/jpeg')
+      );
+    }
+
+    @media (max-width: 425px) {
+      background-image: url('../assets/img/oxford-bg-320.jpg');
+      background-image: image-set(
+        url('../assets/img/oxford-bg-320.webp') type('image/webp'),
+        url('../assets/img/oxford-bg-320.jpg') type('image/jpeg')
+      );
+      background-size: 100% 210px;
+      background-position: 0 0;
+    }
+  }
+
+  &__container {
+    padding: 150px var(--container-offset);
+    padding-top: 168px;
+    padding-bottom: 150px;
+
+    @media (max-width: 992px) {
+      padding: 150px 36px;
+      padding-top: 168px;
+    }
+
+    @include mobile {
+      padding: 30px 12px;
+      padding-top: 36px;
+    }
+
+    @media (max-width: 425px) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__content {
+    max-width: 508px;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 425px) {
+      align-items: stretch;
+      min-height: 265px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 46px;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--clr-light);
+
+    @include mobile {
+      margin-bottom: 40px;
+      max-width: 187px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 425px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title-accent {
+    font-family: 'Playfair-Display';
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 100%;
+    color: #d5b986;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__btn {
+    padding: 20px 30px;
+
+    @include mobile {
+      margin-top: auto;
+    }
+  }
+}

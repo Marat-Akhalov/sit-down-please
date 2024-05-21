@@ -1,0 +1,364 @@
+.categories {
+  &__tags {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 14px;
+
+    @include mobile {
+      gap: 0;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 100%;
+
+      margin-bottom: 7px;
+    }
+  }
+
+  &__tag {
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--clr-text-grey);
+
+    @include mobile {
+      font-size: 10px;
+
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr [col-end]);
+    gap: 32px;
+
+    @include tablet {
+      grid-template-columns: repeat(9, 1fr);
+      grid-auto-flow: dense;
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include mobile {
+      column-gap: 16px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 405px;
+    background-position: 0 60%;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      grid-column: span 3;
+    }
+
+    @media (max-width: 992px) {
+      min-height: 511px;
+    }
+
+    @include mobile {
+      padding: 16px;
+      min-height: 206px;
+    }
+
+    &--couch {
+      grid-column: span 6;
+      min-height: 511px;
+      background-image: url('../assets/img/categories-couch.png');
+      background-image: -webkit-image-set(
+        url('../assets/img/categories-couch.webp') type('image/webp')
+      );
+      background-image: image-set(
+        url('../assets/img/categories-couch.webp') type('image/webp')
+      );
+
+      @include mobile {
+        padding: 30px;
+        min-height: 332px;
+        background-size: 100% 212px;
+        background-position: 3px 104px;
+
+        & .categories__tag {
+          margin-bottom: 0;
+          font-size: 14px;
+        }
+
+        & .categories__tags {
+          flex-direction: row;
+          margin-bottom: 14px;
+        }
+      }
+    }
+
+    &--armchair {
+      grid-column: span 6;
+      min-height: 511px;
+      background-image: url('../assets/img/categories-armchair.png');
+      background-image: -webkit-image-set(
+        url('../assets/img/categories-armchair.webp') type('image/webp')
+      );
+      background-image: image-set(
+        url('../assets/img/categories-armchair.webp') type('image/webp')
+      );
+
+      @include tablet {
+        grid-column: 4 / 7;
+        background-image: -webkit-image-set(
+          url('../assets/img/categories-armchair-1024.webp') type('image/webp')
+        );
+        background-image: image-set(
+          url('../assets/img/categories-armchair-1024.webp') type('image/webp')
+        );
+        background-size: 496px 296px;
+        background-position: -236px 129px;
+      }
+
+      @include mobile {
+        min-height: 206px;
+        background-size: 114% 104px;
+        background-position: -12px 85px;
+      }
+    }
+
+    &--beds {
+      background-image: url('../assets/img/categories-bed.png');
+      background-image: -webkit-image-set(
+        url('../assets/img/categories-bed.webp') type('image/webp')
+      );
+      background-image: image-set(
+        url('../assets/img/categories-bed.webp') type('image/webp')
+      );
+
+      @include tablet {
+        background-image: -webkit-image-set(
+          url('../assets/img/categories-bed.webp') type('image/webp')
+        );
+        background-image: image-set(
+          url('../assets/img/categories-bed.webp') type('image/webp')
+        );
+
+        background-size: 448px 296px;
+        background-position: 0 129px;
+      }
+
+      @include mobile {
+        background-size: 114% 104px;
+        background-position: 0px 86px;
+      }
+    }
+
+    &--commodes {
+      background-image: url('../assets/img/categories-commode.png');
+      background-image: -webkit-image-set(
+        url('../assets/img/categories-commode.webp') type('image/webp')
+      );
+      background-image: image-set(
+        url('../assets/img/categories-commode.webp') type('image/webp')
+      );
+
+      @include tablet {
+        background-size: 252px 296px;
+        background-position: 0 129px;
+        background-image: url('../assets/img/categories-commode-1024.png');
+        background-image: -webkit-image-set(
+          url('../assets/img/categories-commode-1024.webp') type('image/webp')
+        );
+        background-image: image-set(
+          url('../assets/img/categories-commode-1024.webp') type('image/webp')
+        );
+      }
+
+      @include mobile {
+        background-image: url('../assets/img/categories-commode-320.png');
+        background-image: -webkit-image-set(
+          url('../assets/img/categories-commode-320.webp') type('image/webp')
+        );
+        background-image: image-set(
+          url('../assets/img/categories-commode-320.webp') type('image/webp')
+        );
+        background-size: 140px 87px;
+        background-position: center 84%;
+      }
+    }
+
+    &--chairs {
+      background-image: url('../assets/img/categories-chair.png');
+      background-image: -webkit-image-set(
+        url('../assets/img/categories-chair.webp') type('image/webp')
+      );
+      background-image: image-set(
+        url('../assets/img/categories-chair.webp') type('image/webp')
+      );
+
+      @include tablet {
+        background-size: 378px 296px;
+        background-position: -114px 60%;
+      }
+
+      @include mobile {
+        background-image: url('../assets/img/categories-chair-320.png');
+        background-image: -webkit-image-set(
+          url('../assets/img/categories-chair-320.webp') type('image/webp')
+        );
+        background-image: image-set(
+          url('../assets/img/categories-chair-320.webp') type('image/webp')
+        );
+        background-size: 140px 104px;
+        background-position: center 84%;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--clr-text-dark);
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 16px;
+    }
+
+    &--couch {
+      font-size: 24px;
+    }
+  }
+
+  &__header-link {
+    display: none;
+    padding: 0;
+
+    @include mobile {
+      display: inline-flex;
+
+      svg {
+        width: 22px;
+        height: 22px;
+        fill: transparent;
+        stroke: var(--clr-primary);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    margin-top: auto;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
+    color: var(--clr-primary);
+
+    @include hover {
+      &:hover {
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        path {
+          stroke: var(--clr-light);
+        }
+
+        circle {
+          fill: var(--clr-primary);
+        }
+      }
+
+      &:focus-visible {
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        path {
+          stroke: var(--clr-light);
+        }
+
+        circle {
+          fill: var(--clr-primary-light);
+        }
+      }
+    }
+
+    &:active {
+      color: var(--clr-primary-dark);
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        background-color: var(--clr-primary-dark);
+      }
+
+      path {
+        stroke: var(--clr-light);
+      }
+
+      circle {
+        stroke: var(--clr-primary-dark);
+        fill: var(--clr-primary-dark);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 30px;
+      width: 81px;
+      bottom: 30px;
+      height: 2px;
+      opacity: 0;
+      visibility: hidden;
+      background-color: var(--clr-primary);
+      transition: opacity 0.3s ease-in-out, visibility;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: transparent;
+
+      path {
+        stroke: var(--clr-primary);
+        transition: stroke 0.3s ease-in-out;
+      }
+
+      circle {
+        stroke: var(--clr-primary);
+        transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+      }
+    }
+  }
+}
