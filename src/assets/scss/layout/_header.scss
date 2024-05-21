@@ -1,0 +1,447 @@
+.header {
+  position: relative;
+
+  &__top {
+    background-color: #f6f6f6;
+
+    @media (max-width: 1200px) {
+      background-color: #fff;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__top-content {
+    @include flex-v-center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 14px var(--container-offset);
+    max-width: var(--container-width);
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 17px;
+      padding: 0;
+      padding-top: 18px;
+    }
+
+    @include small-tablet {
+      gap: 19px;
+    }
+
+    @include mobile {
+      margin: 0;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      border-color: #f6f6f6;
+      padding-top: 14px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &__call {
+    position: relative;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--clr-secondary);
+    outline: none;
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: var(--clr-secondary-light);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    @include hover {
+      &:hover:not(:focus-visible) {
+        color: var(--clr-secondary-light);
+      }
+
+      &:focus-visible:not(:active) {
+        background-color: var(--clr-secondary-light);
+      }
+
+      &:focus-visible::before:not(:active) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:active:not(:focus-visible) {
+      color: var(--clr-secondary-dark);
+    }
+
+    &:active {
+      color: var(--clr-secondary-dark);
+    }
+
+    @media (max-width: 1200px) {
+      padding-left: var(--container-offset);
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+  }
+
+  &__middle {
+    @include flex-v-center;
+    justify-content: space-between;
+    padding: 32px 0;
+    padding-bottom: 28px;
+
+    @media (max-width: 1200px) {
+      // flex-wrap: nowrap;
+    }
+
+    @include tablet {
+      row-gap: 32px;
+    }
+
+    @include small-tablet {
+      row-gap: 26px;
+      padding-bottom: 34px;
+    }
+
+    @include mobile {
+      padding-top: 13px;
+      padding-bottom: 17px;
+    }
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    @media (max-width: 1200px) {
+      margin-right: 64px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__nav-wrap {
+    @media (max-width: 1200px) {
+      padding: 16px var(--container-offset);
+      width: 100%;
+      background-color: #f6f6f6;
+    }
+
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    margin-right: 5px;
+
+    @media (max-width: 1200px) {
+      align-self: flex-start;
+      padding-top: 3px;
+      flex-grow: 2;
+    }
+  }
+
+  &__bottom {
+    @include flex-v-center;
+    justify-content: space-between;
+  }
+
+  &__user-links {
+    margin-bottom: -3px;
+
+    @media (max-width: 1200px) {
+      position: absolute;
+      top: 70px;
+      right: var(--container-offset);
+    }
+
+    @media (max-width: 1018px) {
+      top: 140px;
+    }
+
+    @media (max-width: 720px) {
+      top: 73px;
+      right: calc(var(--container-offset) + 5px);
+    }
+
+    @include mobile {
+      top: 76px;
+      right: calc(var(--container-offset));
+    }
+  }
+
+  &__search {
+    @media (max-width: 1200px) {
+      max-width: 733px;
+    }
+  }
+
+  &__top-logo-wrap {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+      padding: 12px var(--container-offset);
+      padding-bottom: 8px;
+      width: 100%;
+      background-color: #f6f6f6;
+    }
+  }
+}
+
+.nav-top {
+  &__list {
+    @include flex-v-center;
+    gap: 64px;
+    // padding: 18px;
+
+    @media (max-width: 1018px) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 35px;
+      width: 100%;
+    }
+
+    @include small-tablet {
+      gap: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--clr-text-grey);
+    outline: none;
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -3px;
+      left: -3px;
+      bottom: 0;
+      z-index: -1;
+      background-color: var(--clr-primary-light);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    @include hover {
+      &:hover:not(:focus-visible) {
+        color: var(--clr-primary);
+      }
+
+      &:focus-visible:not(:active) {
+        color: var(--clr-primary-dark);
+      }
+
+      &:focus-visible::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:active:not(:focus-visible) {
+      color: var(--clr-primary-dark);
+    }
+
+    &:active {
+      color: var(--clr-primary-dark);
+    }
+
+    &:active::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+.nav {
+  overflow: hidden;
+
+  &__list {
+    @include flex-v-center;
+    gap: 91px;
+
+    @media (max-width: 1200px) {
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    @include small-tablet {
+      gap: 30px;
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 16px;
+    line-height: normal;
+    color: var(--clr-text-dark);
+    outline: none;
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -3px;
+      left: -3px;
+      bottom: 0;
+      z-index: -1;
+      background-color: var(--clr-primary-light);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    @include hover {
+      &:hover:not(:focus-visible) {
+        color: var(--clr-primary);
+      }
+
+      &:focus-visible:not(:active) {
+        color: var(--clr-primary-dark);
+      }
+
+      &:focus-visible::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:active:not(:focus-visible) {
+      color: var(--clr-primary-dark);
+    }
+
+    &:active {
+      color: var(--clr-primary-dark);
+    }
+
+    &:active::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    @include small-tablet {
+      font-size: 14px;
+    }
+  }
+}
+
+.user-links {
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    outline: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      left: -3px;
+      bottom: -2px;
+      z-index: -1;
+      background-color: var(--clr-primary-light);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    &:nth-child(2) {
+      &::before {
+        left: -15px;
+      }
+    }
+
+    @include hover {
+      &:hover:not(:focus-visible) {
+        svg {
+          fill: var(--clr-primary-light);
+        }
+      }
+
+      &:focus-visible:not(:active) {
+        svg {
+          fill: var(--clr-light);
+        }
+      }
+
+      &:focus-visible::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &:active:not(:focus-visible) {
+      svg {
+        fill: var(--clr-primary-dark);
+      }
+    }
+
+    &:active::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--clr-primary);
+      transition: fill 0.3s ease-in-out;
+    }
+
+    &--account {
+      margin-right: 39px;
+    }
+
+    &--basket {
+      position: relative;
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    top: 5px;
+    left: -13px;
+    border-radius: 10px;
+    padding: 2px 4px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 110%;
+    color: var(--clr-light);
+    background-color: var(--clr-secondary);
+  }
+}
